@@ -1,0 +1,131 @@
+Q1. 
+
+// Get nth Bit is Set or Unset
+
+#include <iostream>
+using namespace std;
+
+int main(){
+   
+    int x;
+    
+    cin >>x;
+   
+   if ( x & 1 )
+   {
+       cout<<"bit is set";
+   }
+   else 
+   {
+       cout<<"bit is unset";
+   }
+   return 0;
+}
+-------------------------------------
+
+Q2.
+
+// Set nth Bit of a Number 
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num, n;
+
+    cout << "Enter number :- ";
+    cin >> num;
+
+    cout << "Enter bit number you wish to set: ";
+    cin >> n;
+
+    cout << "Bit set Successfully" << endl;
+    cout << "Answer: " << (num | (1 << (n - 1))) << endl;
+
+    return 0;
+}
+----------------------------------------------------------
+
+Q3. 
+
+// Clear nth Bit 
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num, n, newBit;
+
+    cout << "Enter a Number :- ";
+    cin >> num;
+
+    /* Input bit number you want to clear */
+    cout <<"Enter nth bit to clear (0-31): ";
+    cin >> n;
+
+    newBit = num & (~(1 << n));
+
+    cout << "Bit cleared successfully.\n\n";
+    
+    return 0;
+}
+--------------------------------------------------
+
+Q4. 
+
+// Toggle 
+
+#include <iostream>
+using namespace std;
+
+int TogglenthBit(int n,int a)
+{                           
+	return n ^ (1 << (a-1));
+}
+
+int main() 
+{
+	int num,a;
+	
+	cout<<"Enter number :- ";
+	cin>>num;
+	
+	cout<<"Enter bit to toggle (value of k): ";
+	cin>>a;
+
+	cout<<"Enter number: "<<num<<endl;
+	cout<<"Enter k: "<<a<<endl;
+
+	cout<<"original number before toggling: "<<num<<endl;
+
+	int new_number= TogglenthBit(num,a);
+
+	cout<<"new number after toggling: "<<new_number<<endl;
+	
+	return 0;
+}
+----------------------------------------------------------------
+
+Q5.
+
+//  Most Significant Bit 
+
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+// MSB means Most Significant Bit 
+int msbBitValue(int n) {
+   int k = (int)(log2(n));
+   return (int)(pow(2, k));
+}
+int main() {
+   int n ;
+   cout << "Enter a Number :- ";
+   cin >> n;
+   cout << "MSB bit value is: "<< msbBitValue(n);
+}
+-----------------------------------------------------------------
+
